@@ -1,0 +1,28 @@
+{
+  "name": "yoprogramo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "sass src/sass/custom.scss dist/css/index.css",
+    "dev": "sass --watch src/sass/custom.scss css/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesBarr456/YoProgramo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesBarr456/YoProgramo/issues"
+  },
+  "homepage": "https://github.com/JamesBarr456/YoProgramo#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha3",
+    "validate.js": "^0.13.1"
+  },
+  "devDependencies": {
+    "sass": "^1.62.0"
+  }
+}
