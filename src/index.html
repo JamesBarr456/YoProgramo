@@ -213,53 +213,37 @@
           <form action="#" class="col-12 col-lg">
             <div class="row">
               <div class="col-lg">
-                <label for="mascota" class="form-label"
-                  >Seleccionar mascota</label
-                >
-                <select
-                  id="mascota"
-                  class="form-select"
-                  aria-label="Default select example"
-                >
-                  <option selected>Tipo de Pokemon</option>
-                  <option value="1">Tierra</option>
-                  <option value="2">Aire</option>
-                  <option value="3">Agua</option>
-                </select>
+                <label for="nombre" class="form-label">Nombre de Pokemon</label>
+                <input
+                  type="search"
+                  id="nombre"
+                  class="form-control"
+                  placeholder="Nombre"
+                />
               </div>
               <div class="col-lg">
-                <label for="mascota2" class="form-label"
-                  >Seleccionar mascota</label
-                >
+                <label for="tipo" class="form-label">Tipo de Pokemon</label>
                 <select
-                  id="mascota2"
+                  id="tipo"
                   class="form-select"
-                  aria-label="Default select example"
+                  aria-label="Desplegable con tipos de pokemon"
                 >
-                  <option selected>Tipo de Pokemon</option>
-                  <option value="1">Tierra</option>
-                  <option value="2">Aire</option>
-                  <option value="3">Agua</option>
-                </select>
-              </div>
-              <div class="col-lg">
-                <label for="mascota3" class="form-label"
-                  >Seleccionar mascota</label
-                >
-                <select
-                  id="mascota3"
-                  class="form-select"
-                  aria-label="Default select example"
-                >
-                  <option selected>Tipo de Pokemon</option>
-                  <option value="1">Tierra</option>
-                  <option value="2">Aire</option>
-                  <option value="3">Agua</option>
+                  <option value="ground">Tierra</option>
+                  <option value="fighting">Peleador</option>
+                  <option value="water">Agua</option>
+                  <option value="ghost">Fantasma</option>
+                  <option value="poison">Veneno</option>
+                  <option value="fire">Fuego</option>
+                  <option value="grass">Planta</option>
+                  <option value="ice">Hielo</option>
+                  <option value="flying">Volador</option>
+                  <option value="psychic">Psíquico</option>
+                  <option value="rock">Roca</option>
                 </select>
               </div>
               <div class="row mt-4">
                 <button id="filtrar" class="col-auto mx-auto btn btn-primary">
-                  filtrar
+                  Filtrar
                 </button>
               </div>
             </div>
@@ -280,68 +264,85 @@
         <div
           class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 gy-3"
         >
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
           </div>
-          <div>
+          <div class="text-center">
             <img
               src="images/pokemon_PNG129.png"
-              class="img-fluid shadow"
+              class="img-fluid shadow mb-2"
               alt="imagen del pokemon"
             />
+            <p class="fs-5">Pikachu</p>
+          </div>
+          <div class="text-center">
+            <img
+              src="images/pokemon_PNG129.png"
+              class="img-fluid shadow mb-2"
+              alt="imagen del pokemon"
+            />
+            <p class="fs-5">Pikachu</p>
           </div>
         </div>
       </section>
@@ -358,8 +359,15 @@
             </div>
             <h4>Cuidado dental</h4>
             <p>Describe uno de tus servicios en esta area</p>
-            <button class="btn btn-primary wizard">Reservar ahora</button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Reservar ahora
+            </button>
           </div>
+
           <div>
             <div class="mb-3">
               <img
@@ -370,7 +378,13 @@
             </div>
             <h4>Chequeo</h4>
             <p>Describe uno de tus servicios en esta area</p>
-            <button class="btn btn-primary wizard">Reservar ahora</button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Reservar ahora
+            </button>
           </div>
           <div>
             <div class="mb-3">
@@ -382,7 +396,13 @@
             </div>
             <h4>Peluqueria</h4>
             <p>Describe uno de tus servicios en esta area</p>
-            <button class="btn btn-primary wizard">Reservar ahora</button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Reservar ahora
+            </button>
           </div>
           <div>
             <div class="mb-3">
@@ -394,7 +414,13 @@
             </div>
             <h4>Vacunas</h4>
             <p>Describe uno de tus servicios en esta area</p>
-            <button class="btn btn-primary wizard">Reservar ahora</button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Reservar ahora
+            </button>
           </div>
           <div>
             <div class="mb-3">
@@ -406,7 +432,13 @@
             </div>
             <h4>Manejo de dolor</h4>
             <p>Describe uno de tus servicios en esta area</p>
-            <button class="btn btn-primary wizard">Reservar ahora</button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Reservar ahora
+            </button>
           </div>
           <div>
             <div class="mb-3">
@@ -418,9 +450,280 @@
             </div>
             <h4>Consulta de comportamiento</h4>
             <p>Describe uno de tus servicios en esta area</p>
-            <button class="btn btn-primary wizard">Reservar ahora</button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Reservar ahora
+            </button>
           </div>
         </div>
+        <!-- Inicio de Modal -->
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Resumen de gastos
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <form action="#">
+                      <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                          <a href="#step1" class="nav-link active">Paso 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#step2" class="nav-link">Paso 2</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#step3" class="nav-link">Paso 3</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div
+                          class="tab-pane fade show active"
+                          id="step1"
+                          role="tabpanel"
+                          aria-labelledby="home-tab"
+                          tabindex="0"
+                        >
+                          <h4>Paso 1</h4>
+                          <!-- <label for="opciones" class="form-label"
+                              >Quiere agregar algun otro servicio?</label
+                            > -->
+                          <p>Desea agregar algun otro servicio?</p>
+
+                          <div class="text-start">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              >
+                                Cuidado dental
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Chequeo
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked3"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked3"
+                              >
+                                Peluqueria
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked4"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked4"
+                              >
+                                Vacunas
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked5"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked5"
+                              >
+                                Manejo de dolor
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked6"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked6"
+                              >
+                                Consulta de comportamiento
+                              </label>
+                            </div>
+                          </div>
+                          <div>
+                            <button type="submit" class="btn btn-success">
+                              Siguiente
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                          class="tab-pane fade show active"
+                          id="step2"
+                          role="tabpanel"
+                          aria-labelledby="home-tab"
+                          tabindex="0"
+                        >
+                          <h4>Paso 2</h4>
+                          <!-- <label for="opciones" class="form-label"
+                              >Quiere agregar algun otro servicio?</label
+                            > -->
+                          <p>Datos del usuario</p>
+
+                          <div>
+                            <div>
+                              <label for="nombre" class="form-label"
+                                >Nombre</label
+                              >
+                              <input
+                                id="nombre"
+                                type="text"
+                                class="form-control"
+                              />
+                            </div>
+                            <div>
+                              <label for="apellido" class="form-label"
+                                >Apellido</label
+                              >
+                              <input
+                                id="apellido"
+                                type="text"
+                                class="form-control"
+                              />
+                            </div>
+                            <div>
+                              <label for="edad" class="form-label">Edad</label>
+                              <input
+                                id="edad"
+                                type="number"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <button type="button" class="btn btn-primary prev">
+                              Anterior
+                            </button>
+                            <button type="submit" class="btn btn-success">
+                              Siguiente
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                          class="tab-pane fade show active"
+                          id="step3"
+                          role="tabpanel"
+                          aria-labelledby="home-tab"
+                          tabindex="0"
+                        >
+                          <h4>Paso 3</h4>
+                          <!-- <label for="opciones" class="form-label"
+                              >Quiere agregar algun otro servicio?</label
+                            > -->
+                          <p>Datos de pago</p>
+
+                          <div>
+                            <label for="tarjeta" class="form-label"
+                              >N. de tarjeta</label
+                            >
+                            <input
+                              id="tarjeta"
+                              type="number"
+                              class="form-control"
+                            />
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <label for="mes" class="form-label">mes</label>
+                              <input
+                                id="mes"
+                                type="number"
+                                class="form-control"
+                              />
+                            </div>
+                            <div class="col">
+                              <label for="anio" class="form-label">anio</label>
+                              <input
+                                id="anio"
+                                type="number"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-primary prev">
+                            Anterior
+                          </button>
+                          <button type="submit" class="btn btn-success">
+                            Enviar
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Siguiente
+                  </button>
+                </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- Fin de modal -->
       </section>
       <section class="container text-center py-5">
         <h3 class="display-5 text-blue-700 mb-5">Sobre mi</h3>
