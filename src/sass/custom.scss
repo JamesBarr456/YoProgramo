@@ -13,6 +13,33 @@ $font-family-sans-serif: "Nunito", serif;
 
 // 4. Include any default map overrides here
 
+/* $custom-colors: (
+  // Primary
+  "soft-red": hsl(7, 99%, 70%),
+  "yellow": hsl(51, 100%, 49%),
+  "cyan": hsl(168, 34%, 41%),
+  "dark-cyan": hsl(167, 40%, 24%),
+  "dark-blue": hsl(198, 62%, 26%),
+  //Neutral
+  "grayish-blue": hsl(210, 4%, 67%),
+  "grayish-dark-blue": hsl(232, 10%, 55%),
+  "veryDark-grayish-blue": hsl(213, 9%, 39%),
+  "veryDark-desatured-blue": hsl(212, 27%, 19%)
+); */
+
+$custom-colors: (
+  // Primary
+  "Light-red": hsl(356, 100%, 66%),
+  "Very-light-red": hsl(355, 100%, 74%),
+  "Very-dark-blue": hsl(208, 49%, 24%),
+  //Neutral
+  "Grayish-blue": hsl(240, 2%, 79%),
+  "Very-dark-grayish-blue": hsl(207, 13%, 34%),
+  "Very-dark-black-blue": hsl(240, 10%, 16%)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
 // 5. Include remainder of required parts
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -80,3 +107,11 @@ $utilities: map-merge(
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+
+.banner {
+  background-image: url(../../src/images/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-position: 20px 150px;
+  // background-position: 0px -60px;
+}
