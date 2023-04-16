@@ -107,11 +107,27 @@ $utilities: map-merge(
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+#logo{
+  width: 40%;
+  height: 40%;
+}
+.banner{
+  background-color: rgba(140,183,104,255) ;
+}
 
-.banner {
-  background-image: url(../../src/images/banner.jpg);
-  background-repeat: no-repeat;
+footer {
+  background-image: url(../../src/images/footer.jpg);
   background-size: cover;
-  // background-position: 20px 150px;
-  // background-position: 0px -60px;
+  background-repeat: no-repeat;
+ 
+}
+
+.filtrado{
+  background-color: rgba(140,183,104,255);
+}
+
+a {
+  text-decoration: none;
+  margin-right: 20px;
+ 
 }
