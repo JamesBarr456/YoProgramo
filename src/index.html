@@ -12,22 +12,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="../dist/css/index.css" />
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous">
+  </script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
   <script src="./script.js"></script>
 </head>
 
-<body>
-  <header class="">
-    <nav class="navbar navbar-expand-md">
+<body class="bg-light bg-gradient">
+  <header>
+    <nav class="navbar navbar-expand-md bg-white">
       <div class="container">
         <!-- <a class="navbar-brand text-white fw-bolder fs-2" href="#">Logo</a> -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand col-auto" href="#">
           <img id="logo" class="img-fluid" src="../src/images/Veterinaria Grookey .png" alt="logo" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -43,7 +47,7 @@
               <a class="nav-link text-blue-700 fs-5" href="#">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  text-blue-700 fs-5" href="#">Galeria</a>
+              <a class="nav-link text-blue-700 fs-5" href="#">Galeria</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-blue-700 fs-5" href="#">Contacto</a>
@@ -54,108 +58,78 @@
     </nav>
     <section class="banner py-5">
       <div class="container">
-        <div class="row">
-          <!-- <div class="col-12 col-lg-2 banner__img banner__img--1">
-              <img
-                class="img-fluid"
-                src="images/pokemon_PNG129.png"
-                alt="pokemon"
-              />
-            </div> -->
-          <article class="col-md-6 text-center">
+        <div class="row align-items-center">
+          <article class="col-md col-lg-8 text-center mb-5 mb-md-0">
             <div>
               <h1 class="text-blue-700 fw-bolder display-5 mb-3">
                 El mejor equipo del mundo para servicios de mascotas
               </h1>
-              <h2 class="text-blue-700 fs-bold fs-5 mb-5">
-                Vetic es la primera de las clínicas modernas con tecnología
-                integrada para satisfacer todas las necesidades de su mascota,
-                como bienestar, consultas, aseo y nutrición.
+              <h2 class="text-blue-600 fs-bold fs-5 mb-5">
+                Veterinaria Grookey es la primera de las clínicas modernas con
+                tecnología integrada para satisfacer todas las necesidades de
+                su Pokemon, como bienestar, consultas, aseo y nutrición.
               </h2>
             </div>
             <div class="row">
-              <div class="col-lg">
+              <div class="col-md">
                 <div>
-                  <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_6_1307)">
-                      <circle cx="35.7988" cy="35.3611" r="35" fill="#EBF1FA" />
-                      <path
-                        d="M38.291 31.3611C37.1191 31.3611 32.0215 31.4783 28.7988 36.4001V31.3611C28.7988 28.3142 26.2207 25.7361 23.1738 25.7361C22.1191 25.7361 21.2988 26.615 21.2988 27.6111C21.2988 28.6658 22.1191 29.4861 23.1738 29.4861C24.1699 29.4861 25.0488 30.365 25.0488 31.3611V46.3611C25.0488 48.4705 26.6895 50.1111 28.7988 50.1111H39.1113C39.5801 50.1111 40.0488 49.7009 40.0488 49.1736V48.2361C40.0488 47.24 39.1699 46.3611 38.1738 46.3611H36.2988L43.7988 40.7361V49.1736C43.7988 49.7009 44.209 50.1111 44.7363 50.1111H46.6113C47.0801 50.1111 47.5488 49.7009 47.5488 49.1736V37.1033C46.9043 37.2791 46.3184 37.3962 45.6738 37.3962C42.041 37.3962 38.9941 34.8181 38.291 31.3611ZM47.5488 25.7361H43.7988L40.0488 21.9861V29.8962C40.0488 33.0017 42.5098 35.5212 45.6738 35.5212C48.7793 35.5212 51.2988 33.0017 51.2988 29.8962V21.9861L47.5488 25.7361ZM43.3301 30.4236C42.8027 30.4236 42.3926 30.0134 42.3926 29.4861C42.3926 29.0173 42.8027 28.5486 43.3301 28.5486C43.7988 28.5486 44.2676 29.0173 44.2676 29.4861C44.2676 30.0134 43.7988 30.4236 43.3301 30.4236ZM48.0176 30.4236C47.4902 30.4236 47.0801 30.0134 47.0801 29.4861C47.0801 29.0173 47.4902 28.5486 48.0176 28.5486C48.4863 28.5486 48.9551 29.0173 48.9551 29.4861C48.9551 30.0134 48.4863 30.4236 48.0176 30.4236Z"
-                        fill="#193A6A" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_6_1307">
-                        <rect width="70" height="70" fill="white" transform="translate(0.798828 0.361084)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <img src="images/pngwing.com1.png" class="img-fluid banner__pokemon banner__pokemon--purple mb-2"
+                    alt="pokemon" />
                 </div>
-                <p>Serivicios veterinarios</p>
+                <p class="text-blue-800 fs-6 fw-bold">
+                  Serivicios veterinarios
+                </p>
               </div>
-              <div class="col-lg">
+              <div class="col-md">
                 <div>
-                  <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_6_1307)">
-                      <circle cx="35.7988" cy="35.3611" r="35" fill="#EBF1FA" />
-                      <path
-                        d="M38.291 31.3611C37.1191 31.3611 32.0215 31.4783 28.7988 36.4001V31.3611C28.7988 28.3142 26.2207 25.7361 23.1738 25.7361C22.1191 25.7361 21.2988 26.615 21.2988 27.6111C21.2988 28.6658 22.1191 29.4861 23.1738 29.4861C24.1699 29.4861 25.0488 30.365 25.0488 31.3611V46.3611C25.0488 48.4705 26.6895 50.1111 28.7988 50.1111H39.1113C39.5801 50.1111 40.0488 49.7009 40.0488 49.1736V48.2361C40.0488 47.24 39.1699 46.3611 38.1738 46.3611H36.2988L43.7988 40.7361V49.1736C43.7988 49.7009 44.209 50.1111 44.7363 50.1111H46.6113C47.0801 50.1111 47.5488 49.7009 47.5488 49.1736V37.1033C46.9043 37.2791 46.3184 37.3962 45.6738 37.3962C42.041 37.3962 38.9941 34.8181 38.291 31.3611ZM47.5488 25.7361H43.7988L40.0488 21.9861V29.8962C40.0488 33.0017 42.5098 35.5212 45.6738 35.5212C48.7793 35.5212 51.2988 33.0017 51.2988 29.8962V21.9861L47.5488 25.7361ZM43.3301 30.4236C42.8027 30.4236 42.3926 30.0134 42.3926 29.4861C42.3926 29.0173 42.8027 28.5486 43.3301 28.5486C43.7988 28.5486 44.2676 29.0173 44.2676 29.4861C44.2676 30.0134 43.7988 30.4236 43.3301 30.4236ZM48.0176 30.4236C47.4902 30.4236 47.0801 30.0134 47.0801 29.4861C47.0801 29.0173 47.4902 28.5486 48.0176 28.5486C48.4863 28.5486 48.9551 29.0173 48.9551 29.4861C48.9551 30.0134 48.4863 30.4236 48.0176 30.4236Z"
-                        fill="#193A6A" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_6_1307">
-                        <rect width="70" height="70" fill="white" transform="translate(0.798828 0.361084)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <img src="images/pngwing.com3.png" class="img-fluid banner__pokemon banner__pokemon--blue mb-2"
+                    alt="pokemon" />
                 </div>
-                <p>Cuidado especial</p>
+                <p class="text-blue-800 fs-6 fw-bold">Cuidado especial</p>
               </div>
-              <div class="col-lg">
+              <div class="col-md">
                 <div>
-                  <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_6_1307)">
-                      <circle cx="35.7988" cy="35.3611" r="35" fill="#EBF1FA" />
-                      <path
-                        d="M38.291 31.3611C37.1191 31.3611 32.0215 31.4783 28.7988 36.4001V31.3611C28.7988 28.3142 26.2207 25.7361 23.1738 25.7361C22.1191 25.7361 21.2988 26.615 21.2988 27.6111C21.2988 28.6658 22.1191 29.4861 23.1738 29.4861C24.1699 29.4861 25.0488 30.365 25.0488 31.3611V46.3611C25.0488 48.4705 26.6895 50.1111 28.7988 50.1111H39.1113C39.5801 50.1111 40.0488 49.7009 40.0488 49.1736V48.2361C40.0488 47.24 39.1699 46.3611 38.1738 46.3611H36.2988L43.7988 40.7361V49.1736C43.7988 49.7009 44.209 50.1111 44.7363 50.1111H46.6113C47.0801 50.1111 47.5488 49.7009 47.5488 49.1736V37.1033C46.9043 37.2791 46.3184 37.3962 45.6738 37.3962C42.041 37.3962 38.9941 34.8181 38.291 31.3611ZM47.5488 25.7361H43.7988L40.0488 21.9861V29.8962C40.0488 33.0017 42.5098 35.5212 45.6738 35.5212C48.7793 35.5212 51.2988 33.0017 51.2988 29.8962V21.9861L47.5488 25.7361ZM43.3301 30.4236C42.8027 30.4236 42.3926 30.0134 42.3926 29.4861C42.3926 29.0173 42.8027 28.5486 43.3301 28.5486C43.7988 28.5486 44.2676 29.0173 44.2676 29.4861C44.2676 30.0134 43.7988 30.4236 43.3301 30.4236ZM48.0176 30.4236C47.4902 30.4236 47.0801 30.0134 47.0801 29.4861C47.0801 29.0173 47.4902 28.5486 48.0176 28.5486C48.4863 28.5486 48.9551 29.0173 48.9551 29.4861C48.9551 30.0134 48.4863 30.4236 48.0176 30.4236Z"
-                        fill="#193A6A" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_6_1307">
-                        <rect width="70" height="70" fill="white" transform="translate(0.798828 0.361084)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <img src="images/pngwing.com4.png" class="img-fluid banner__pokemon banner__pokemon--orange mb-2"
+                    alt="pokemon" />
                 </div>
-                <p>alta calidad</p>
+                <p class="text-blue-800 fs-6 fw-bold">Entrenamiento</p>
               </div>
             </div>
           </article>
-          <div class="col-md-6 text-center">
-              <img
-                class="img-fluid"
-                src="../src/images/banner-mono.png"
-                alt="pokemon"
-              />
-            </div>
         </div>
       </div>
     </section>
   </header>
-  <section class="filtrado">
-    <div class="container py-5 filtro">
-      <div class="row  align-items-center">
-        <!--<div class="col-12 col-lg-2 filtro__img filtro__img--1">
-          <img class="img-fluid" src="images/pokemon_PNG129.png" alt="pokemon" /> -->
+  <section class="filtro">
+    <div class="container py-5 filtro__content mt-4">
+      <div class="row align-items-center">
+        <div class="text-center text-blue-700 mb-3 col-lg-8 ms-lg-auto">
+          <h2 class="fs-3 mb-4 fw-bold">¿No sabes que son los Pokemones?</h2>
+          <p>
+            Los Pokémon son criaturas de todo tipo de formas y tamaños que
+            viven bien en un medio salvaje o junto a los seres humanos. La
+            mayoría de los Pokémon solo hablan para decir sus nombres. En la
+            actualidad, hay más de 700 criaturas que habitan el
+            universo Pokémon.
+          </p>
+          <p>
+            En todo caso te dejamos unos filtros para que puedas ver los
+            diferentes tipos de pokemon en la galeria y si conoces el nombre
+            de alguno te invitamos a buscarlo para saber si se encuentra en
+            nuestra lista!
+          </p>
         </div>
-        <form action="#" class="text-blue-700 col-12 col-lg">
-          <div class="row">
+
+        <form action="#" class="text-blue-700">
+          <div class="row g-4">
             <div class="col-lg">
-              <label for="nombre" class="form-label">Nombre de Pokemon</label>
-              <input type="search" id="nombre" class="form-control" placeholder="Nombre" />
+              <label for="pokemon-name" class="form-label">Nombre de Pokemon</label>
+              <input type="search" id="pokemon-name" class="form-control" placeholder="Nombre" />
             </div>
             <div class="col-lg">
-              <label for="tipo" class="form-label">Tipo de Pokemon</label>
-              <select id="tipo" class="form-select" aria-label="Desplegable con tipos de pokemon">
+              <label for="pokemon-type" class="form-label">Tipo de Pokemon</label>
+              <select id="pokemon-type" class="form-select" aria-label="Desplegable con tipos de pokemon">
+                <option value="">Todos los tipos</option>
                 <option value="ground">Tierra</option>
                 <option value="fighting">Peleador</option>
                 <option value="water">Agua</option>
@@ -169,297 +143,213 @@
                 <option value="rock">Roca</option>
               </select>
             </div>
-            <div class="row mt-4">
-              <button id="filtrar" class="col-auto mx-auto btn btn-primary">
-                Filtrar
-              </button>
+            <div class="col-12">
+              <div class="row mt-1">
+                <button type="submit" id="filtrar" class="col-auto mx-auto btn btn-primary btn-lg">
+                  Filtrar
+                </button>
+              </div>
             </div>
           </div>
         </form>
-        <!--<div class="col-12 col-lg-2 filtro__img filtro__img--2">
-          <img class="img-fluid" src="images/pokemon_PNG129.png" alt="pokemon" />
-        </div> -->
       </div>
     </div>
   </section>
   <main>
-    <section class="container galeria py-5 bg-light">
+    <section class="container galeria py-5">
       <h3 class="text-center display-5 text-blue-700 mb-5">Galeria</h3>
-      <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 gy-3">
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
-        <div class="text-center">
-          <img src="images/pokemon_PNG129.png" class="img-fluid shadow mb-2" alt="imagen del pokemon" />
-          <p class="fs-5">Pikachu</p>
-        </div>
+      <div id="pokemon-list" class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 gy-3">
       </div>
     </section>
-    <section class="container servicios text-center py-5 bg-teal-100">
+    <section class="container servicios text-center py-5">
       <h3 class="display-5 text-blue-700 mb-5">Servicios</h3>
-      <div class="row row-cols-md-2 row-cols-lg-3 gy-3">
+      <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-3 gy-3">
         <div>
-          <div class="mb-3">
-            <img src="images/pokemon_PNG129.png" alt="imagen de servicio de pokemon" class="img-fluid" />
+          <div class="servicios__pokemon shadow-lg bg-white rounded p-3">
+            <div>
+              <img src="images/rattata.png" alt="imagen de pokemon" class="img-fluid servicios__img" />
+            </div>
+            <div class="servicios__content">
+              <h4 class="text-blue-700 fw-bold">Cuidado dental</h4>
+              <p>
+                La mejor odontologia para el cuidado de los dientes de tus
+                pequeños amigos.
+              </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Reservar ahora
+              </button>
+            </div>
           </div>
-          <h4>Cuidado dental</h4>
-          <p>Describe uno de tus servicios en esta area</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Reservar ahora
-          </button>
-        </div>
-
-        <div>
-          <div class="mb-3">
-            <img src="images/pokemon_PNG129.png" alt="imagen de servicio de pokemon" class="img-fluid" />
-          </div>
-          <h4>Chequeo</h4>
-          <p>Describe uno de tus servicios en esta area</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Reservar ahora
-          </button>
         </div>
         <div>
-          <div class="mb-3">
-            <img src="images/pokemon_PNG129.png" alt="imagen de servicio de pokemon" class="img-fluid" />
+          <div class="servicios__pokemon shadow-lg rounded bg-white p-3">
+            <div>
+              <img src="images/chansey.png" alt="imagen de pokemon" class="img-fluid servicios__img" />
+            </div>
+            <div class="servicios__content">
+              <h4 class="text-blue-700 fw-bold">Chequeo</h4>
+              <p>Revision y asesoramiento del estado de tu Pokemon.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Reservar ahora
+              </button>
+            </div>
           </div>
-          <h4>Peluqueria</h4>
-          <p>Describe uno de tus servicios en esta area</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Reservar ahora
-          </button>
         </div>
         <div>
-          <div class="mb-3">
-            <img src="images/pokemon_PNG129.png" alt="imagen de servicio de pokemon" class="img-fluid" />
+          <div class="servicios__pokemon shadow-lg rounded bg-white p-3">
+            <div>
+              <img src="images/tangela.png" alt="imagen de pokemon" class="img-fluid servicios__img" />
+            </div>
+            <div class="servicios__content">
+              <h4 class="text-blue-700 fw-bold">Peluqueria</h4>
+              <p>El mejor servicio de peluqueria que tu Pokemon merece.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Reservar ahora
+              </button>
+            </div>
           </div>
-          <h4>Vacunas</h4>
-          <p>Describe uno de tus servicios en esta area</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Reservar ahora
-          </button>
         </div>
         <div>
-          <div class="mb-3">
-            <img src="images/pokemon_PNG129.png" alt="imagen de servicio de pokemon" class="img-fluid" />
+          <div class="servicios__pokemon shadow-lg rounded bg-white p-3">
+            <div>
+              <img src="images/mr-mime.png" alt="imagen de pokemon" class="img-fluid servicios__img" />
+            </div>
+            <div class="servicios__content">
+              <h4 class="text-blue-700 fw-bold">Vacunas</h4>
+              <p>
+                Disponemos de una variedad de vacunas para mantener sano a tu
+                Pokemon.
+              </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Reservar ahora
+              </button>
+            </div>
           </div>
-          <h4>Manejo de dolor</h4>
-          <p>Describe uno de tus servicios en esta area</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Reservar ahora
-          </button>
         </div>
         <div>
-          <div class="mb-3">
-            <img src="images/pokemon_PNG129.png" alt="imagen de servicio de pokemon" class="img-fluid" />
+          <div class="servicios__pokemon shadow-lg rounded bg-white p-3">
+            <div>
+              <img src="images/hitmonchan.png" alt="imagen de pokemon" class="img-fluid servicios__img" />
+            </div>
+            <div class="servicios__content">
+              <h4 class="text-blue-700 fw-bold">Manejo de dolor</h4>
+              <p>
+                Entrenamos a tu pokemon para que manejen mejor el dolor en las
+                batallas.
+              </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Reservar ahora
+              </button>
+            </div>
           </div>
-          <h4>Consulta de comportamiento</h4>
-          <p>Describe uno de tus servicios en esta area</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Reservar ahora
-          </button>
+        </div>
+        <div>
+          <div class="servicios__pokemon shadow-lg rounded bg-white p-3">
+            <div>
+              <img src="images/cubone.png" alt="imagen de pokemon" class="img-fluid servicios__img" />
+            </div>
+            <div class="servicios__content">
+              <h4 class="text-blue-700 fw-bold">
+                Consulta de comportamiento
+              </h4>
+              <p>Amaestramos pokemones para que no sean tan gruñones.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Reservar ahora
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Inicio de Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+      <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                Resumen de gastos
-              </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title">Formulario de tres pasos</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Cerrar">
+              </button>
             </div>
             <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <form action="#">
-                    <ul class="nav nav-pills nav-justified">
-                      <li class="nav-item">
-                        <a href="#step1" class="nav-link active">Paso 1</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#step2" class="nav-link">Paso 2</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#step3" class="nav-link">Paso 3</a>
-                      </li>
-                    </ul>
-                    <div class="tab-content">
-                      <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="home-tab"
-                        tabindex="0">
-                        <h4>Paso 1</h4>
-                        <!-- <label for="opciones" class="form-label"
-                              >Quiere agregar algun otro servicio?</label
-                            > -->
-                        <p>Desea agregar algun otro servicio?</p>
+              <!-- Contenido del formulario en cada paso -->
+              <form id="formulario" class="needs-validation g-3" novalidate>
+                <!-- Paso 1 -->
+                <div id="paso1">
+                  <h6>Paso 1: Información básica</h6>
+                  <div class="form-group">
+                    <input placeholder="Nombre" type="text" class="form-control" id="nombre" name="nombre" required />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Apellido" type="text" class="form-control" id="apellido" name="apellido"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Direccion" type="text" class="form-control" id="direccion" name="Direccion"
+                      required />
+                  </div>
 
-                        <div class="text-start">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Cuidado dental
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label class="form-check-label" for="flexCheckChecked">
-                              Chequeo
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" />
-                            <label class="form-check-label" for="flexCheckChecked3">
-                              Peluqueria
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" />
-                            <label class="form-check-label" for="flexCheckChecked4">
-                              Vacunas
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked5" />
-                            <label class="form-check-label" for="flexCheckChecked5">
-                              Manejo de dolor
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked6" />
-                            <label class="form-check-label" for="flexCheckChecked6">
-                              Consulta de comportamiento
-                            </label>
-                          </div>
-                        </div>
-                        <div>
-                          <button type="submit" class="btn btn-success">
-                            Siguiente
-                          </button>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade show active" id="step2" role="tabpanel" aria-labelledby="home-tab"
-                        tabindex="0">
-                        <h4>Paso 2</h4>
-                        <!-- <label for="opciones" class="form-label"
-                              >Quiere agregar algun otro servicio?</label
-                            > -->
-                        <p>Datos del usuario</p>
-
-                        <div>
-                          <div>
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input id="nombre" type="text" class="form-control" />
-                          </div>
-                          <div>
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input id="apellido" type="text" class="form-control" />
-                          </div>
-                          <div>
-                            <label for="edad" class="form-label">Edad</label>
-                            <input id="edad" type="number" class="form-control" />
-                          </div>
-                        </div>
-                        <div>
-                          <button type="button" class="btn btn-primary prev">
-                            Anterior
-                          </button>
-                          <button type="submit" class="btn btn-success">
-                            Siguiente
-                          </button>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade show active" id="step3" role="tabpanel" aria-labelledby="home-tab"
-                        tabindex="0">
-                        <h4>Paso 3</h4>
-                        <!-- <label for="opciones" class="form-label"
-                              >Quiere agregar algun otro servicio?</label
-                            > -->
-                        <p>Datos de pago</p>
-
-                        <div>
-                          <label for="tarjeta" class="form-label">N. de tarjeta</label>
-                          <input id="tarjeta" type="number" class="form-control" />
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <label for="mes" class="form-label">mes</label>
-                            <input id="mes" type="number" class="form-control" />
-                          </div>
-                          <div class="col">
-                            <label for="anio" class="form-label">anio</label>
-                            <input id="anio" type="number" class="form-control" />
-                          </div>
-                        </div>
-                        <button type="button" class="btn btn-primary prev">
-                          Anterior
-                        </button>
-                        <button type="submit" class="btn btn-success">
-                          Enviar
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary siguiente" data-paso="2">
                     Siguiente
                   </button>
-                </div> -->
+                </div>
+                <!-- Paso 2 -->
+                <div id="paso2" style="display: none">
+                  <h6>Paso 2: Información de contacto</h6>
+                  <div class="form-group">
+
+                    <input placeholder="Email" type="email" class="form-control" id="correo" name="correo" required />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Telefono" type="text" class="form-control" id="telefono" name="telefono"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" id="comentario" name="comentario"
+                      placeholder="Agregar un mensaje sobre los servicios que necesita" rows="3" required></textarea>
+                  </div>
+                  <button type="button" class="btn btn-primary anterior" data-paso="1">
+                    Anterior
+                  </button>
+                  <button type="button" class="btn btn-primary siguiente" data-paso="3">
+                    Siguiente
+                  </button>
+                </div>
+                <!-- Paso 3 -->
+                <div id="paso3" style="display: none">
+                  <h6>Paso 3: Confirmación</h6>
+                  <p>Revisa la información antes de enviar:</p>
+                  <p id="confirmacion-nombre"></p>
+                  <p id="confirmacion-apellido"></p>
+                  <p id="confirmacion-correo"></p>
+                  <p id="confirmacion-telefono"></p>
+                  <button type="button" class="btn btn-primary anterior" data-paso="2">
+                    Anterior
+                  </button>
+                  <button id="btn-pdf" type="submit" class="btn btn-primary">
+                    Generar PDF
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
       <!-- Fin de modal -->
     </section>
     <section class="container text-center py-5">
-      <h3 class="display-5 text-blue-700 mb-5">Sobre mi</h3>
+      <h3 class="display-5 text-blue-700 mb-5">Sobre nosotros</h3>
       <div class="row gap-4">
         <div class="col-lg perfil">
-          <img src="images/pokemon_PNG129.png" class="img-fluid rounded-circle w-25 mb-3" alt="imagen nuestra" />
-          <p>
+          <img src="images/Wobbuffet.png" class="img-fluid rounded-circle mb-3 profile shadow" alt="imagen pokemon" />
+          <p class="fw-bold">
+            Soy Santiago Tomas Dalessandro, tengo 26 años, vivo en moreno,
+            estudio la Tecnicatura en programacion en la Universidad Nacional
+            de Hurlingham, en mi tiempo libre me gusta probar videojuegos
+            independientes y programar
+          </p>
+        </div>
+        <div class="col-lg perfil">
+          <img src="images/Pysduck.png" class="img-fluid rounded-circle mb-3 profile shadow" alt="imagen pokemon" />
+          <p class="fw-bold">
             Párrafo. Haz clic aquí para agregar tu propio texto y editarlo. Es
             fácil. Haz clic en "Editar texto" o doble clic aquí para agregar
             tu contenido y cambiar la fuente. En este espacio puedes contar tu
@@ -467,21 +357,11 @@
           </p>
         </div>
         <div class="col-lg perfil">
-          <img src="images/pokemon_PNG129.png" class="img-fluid rounded-circle w-25 mb-3" alt="imagen nuestra" />
-          <p>
-            Párrafo. Haz clic aquí para agregar tu propio texto y editarlo. Es
-            fácil. Haz clic en "Editar texto" o doble clic aquí para agregar
-            tu contenido y cambiar la fuente. En este espacio puedes contar tu
-            historia y permitir que los usuarios sepan más sobre ti.
-          </p>
-        </div>
-        <div class="col-lg perfil">
-          <img src="images/pokemon_PNG129.png" class="img-fluid rounded-circle w-25 mb-3" alt="imagen nuestra" />
-          <p>
-            Párrafo. Haz clic aquí para agregar tu propio texto y editarlo. Es
-            fácil. Haz clic en "Editar texto" o doble clic aquí para agregar
-            tu contenido y cambiar la fuente. En este espacio puedes contar tu
-            historia y permitir que los usuarios sepan más sobre ti.
+          <img src="images/Pichu.png" class="img-fluid rounded-circle mb-3 profile shadow" alt="imagen pokemon" />
+          <p class="fw-bold">
+            Que tal! Me llamo Emmanuel Barreto, tengo 27 años, soy de
+            Formosa,Cap. Actualmente trabajo como Ingeniero Electromecanico y
+            en mis tiempos libres me gusta programar y jugar videojuegos.
           </p>
         </div>
       </div>
@@ -525,7 +405,6 @@
             Corrientes Capital</span>
         </div>
       </div>
-
       <form id="myForm" class="needs-validation row g-3 m-2 justify-content-between" novalidate>
         <div class="form-group col-md-5">
           <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required />
@@ -546,7 +425,7 @@
           <span>© 2022 Todos los derechos reservados - Anima-T</span>
         </div>
         <div class="col-md-3 iconos-redes text-center">
-          <a href="https://www.facebook.com/" target="_blank">
+          <a href="https://www.facebook.com/" class="text-decoration-none" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook"
               viewBox="0 0 20 20">
               <path
@@ -554,7 +433,7 @@
               </path>
             </svg>
           </a>
-          <a href="https://www.instagram.com/" target="_blank">
+          <a href="https://www.instagram.com/" class="text-decoration-none" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram"
               viewBox="0 0 20 20">
               <path
@@ -562,7 +441,7 @@
               </path>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/" target="_blank">
+          <a href="https://www.linkedin.com/" class="text-decoration-none" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-twitter"
               viewBox="0 0 20 20">
               <path
@@ -574,4 +453,5 @@
     </div>
   </footer>
 </body>
+
 </html>
