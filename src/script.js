@@ -249,6 +249,11 @@ $(document).ready(function () {
     unhighlight: function (element, errorClass, validClass) {
       $(element).removeClass("is-invalid").addClass("is-valid");
     },
+
+    submitHandler: function (form) {
+      $("#myForm").append("<p>Formulario enviado correctamente!</p>");
+      $("#btn-contacto").attr("disabled", true);
+    },
   });
 
   //Esta seccion corresponde al form wizard
@@ -314,4 +319,10 @@ $(document).ready(function () {
       location.reload();
     }
   });
+
+  /* $("#btn-contacto").submit(function (event) {
+    event.preventDefault();
+    $("#mensaje").text("El formulario ha sido enviado");
+    $("#mensaje").css("color", "red");
+  }); */
 });
