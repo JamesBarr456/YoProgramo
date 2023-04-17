@@ -251,7 +251,9 @@ $(document).ready(function () {
     },
 
     submitHandler: function (form) {
-      $("#myForm").append("<p>Formulario enviado correctamente!</p>");
+      $("#myForm").append(
+        "<p class='bg-white py-3 rounded shadow'>Formulario enviado correctamente!</p>"
+      );
       $("#btn-contacto").attr("disabled", true);
     },
   });
