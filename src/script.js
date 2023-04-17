@@ -130,61 +130,60 @@ $(document).ready(function () {
 
     //Esta seccion corresponde al Validate de Wizard
     $("#formulario").validate({
-        rules: {
-            nombre: {
-                required: true,
-                minlength: 2,
-                maxlength: 50,
-            },
-            apellido: {
-                required: true,
-                minlength: 2,
-                maxlength: 50,
-            },
-            direccion: {
-                required: true,
-                minlength: 2,
-                maxlength: 50,
-            },
-            correo: {
-                required: true,
-                email: true,
-            },
-            telefono: {
-                required: true,
-                minlength: 2,
-                maxlength: 10,
-            },
-            comentario: {
-                required: true,
-                minlength: 2,
-                maxlength: 200,
-            },
+      rules: {
+        nombre: {
+            required: true,
+            minlength: 2,
+            maxlength: 50,
         },
-        messages: {
-            nombre: {
-                required: "Por favor ingrese un nombre.",
-
-            },
-            apellido: {
-                required: "Por favor ingrese un apellido.",
-            },
-            direccion: {
-                required: "Por favor ingrese una direccion.",
-            },
-            correo: {
-                required: "Por favor ingrese un email.",
-                email: "Por favor ingrese un email válido.",
-            },
-            telefono: {
-                required: "Por favor ingrese un numero telefonico",
-                maxlength: "El maximo es 10"
-            },
-            comentario: {
-                required: "Por favor ingrese un comentario.",
-                comentario: "El maximo de caracteres es 200.",
-            },
+        apellido: {
+            required: true,
+            minlength: 2,
+            maxlength: 50,
         },
+        direccion: {
+            required: true,
+            minlength: 2,
+            maxlength: 50,
+        },
+        correo: {
+            required: true,
+            email: true,
+        },
+        telefono: {
+            required: true,
+            minlength: 2,
+            maxlength: 10,
+        },
+        comentario: {
+            required: true,
+            minlength: 2,
+            maxlength: 200,
+        },
+    },
+    messages: {
+        nombre: {
+            required: "Por favor ingrese un nombre.",
+        },
+        apellido: {
+            required: "Por favor ingrese un apellido.",
+        },
+        direccion: {
+            required: "Por favor ingrese una direccion.",
+        },
+        correo: {
+            required: "Por favor ingrese un email.",
+            email: "Por favor ingrese un email válido.",
+        },
+        telefono: {
+            required: "Por favor ingrese un numero telefonico",
+            maxlength: "El maximo es 10",
+        },
+        comentario: {
+            required: "Por favor ingrese un comentario.",
+            maxlength: "El maximo de caracteres es 200.",
+        },
+    },
         errorElement: "div",
         errorPlacement: function (error, element) {
             if (error)
@@ -253,19 +252,19 @@ $(document).ready(function () {
     });
 
     
-    var paso_1 = document.querySelectorAll("#paso1 input");
-    console.log(paso_1)
-    paso_1.map(elemento => elemento.hasClass("is-valid"))
     //Esta seccion corresponde al form wizard
     $("#paso1").show();
     $(".siguiente").click(function () {
-        
-        var currentStep = $(this).closest("div").attr("id");
-        var nextStep = parseInt($(this).data("paso"));
-        $("#" + currentStep).hide();
-        $("#paso" + nextStep).show();
-
-    });
+      var currentStep = $(this).closest("div").attr("id");
+      var nextStep = parseInt($(this).data("paso"));
+      var valid = $("#formulario").valid(); // Validar el formulario
+  
+      if (valid) { // Si el formulario es válido
+          $("#" + currentStep).hide();
+          $("#paso" + nextStep).show();
+      } //else { // Si el formulario no es válido
+          //alert("Por favor complete todos los campos requeridos.");
+      ;})
 
     // Manejar el click en el botón "Anterior"
     $(".anterior").click(function () {
