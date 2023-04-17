@@ -1,8 +1,6 @@
 $(document).ready(function () {
   //Esta seccion pertenece al consumo de api
 
-  //Esta seccion pertenece al consumo de api
-
   var loaded = false;
 
   //Funcion para cargar 18 pokemones aleatorios en la galeria
@@ -198,10 +196,9 @@ $(document).ready(function () {
       $(element).removeClass("is-invalid").addClass("is-valid");
     },
   });
-  //Esta seccion corresponde al Validate js
+
+  //Esta seccion corresponde al Validate del formulario de contacto
   $("#myForm").validate({
-    //usamos la funciona validate de validate.js
-    // Aqui llamamos a los campos de las ID y verificamos si se agrego algun elemento
     rules: {
       nombre: {
         required: true,
@@ -218,7 +215,6 @@ $(document).ready(function () {
         maxlength: 200,
       },
     },
-    // Si validate verifica que no se ingreso datos en los campos, genera estos mensajes de error
     messages: {
       nombre: {
         required: "Por favor ingrese un nombre.",
@@ -233,18 +229,14 @@ $(document).ready(function () {
         comentario: "El maximo de caracteres es 200.",
       },
     },
-    //errorElement es un elemento de jQuery Validation que nos permite crear un elemento del DOM donde queremos mostrar el msj
     errorElement: "div",
-    //errorPlacement es una función que nos permite decidir donde situar los mensajes de error generados.
     errorPlacement: function (error, element) {
-      //"error" seria la etiqueta div creada y el "elemento" seria la etiqueta input donde se ejecuto el error
-      error.addClass("invalid-feedback"); //agregamos a la etiqueta div la clase invalid-feedback de boostrap
-      element.closest(".form-group").append(error); //closest() sirve para seleccionar un padre de un elemento que coincida con el selector dado.Y luego le agregamos la etiqueta div
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
     },
-    //higlight y unhiglight determinan como resaltar los elementos que no han superado la validación.
+
     highlight: function (element, errorClass, validClass) {
-      // "elemento" es la etiqueta del campo, "errorClass" es -error- y validClass es -valid-
-      $(element).addClass("is-invalid").removeClass("is-valid"); //Se agrega a la clase de la etiqueta del campo si es valid o no para activar las funciones de boostrap
+      $(element).addClass("is-invalid").removeClass("is-valid");
     },
     unhighlight: function (element, errorClass, validClass) {
       $(element).removeClass("is-invalid").addClass("is-valid");
@@ -266,11 +258,9 @@ $(document).ready(function () {
     var valid = $("#formulario").valid(); // Validar el formulario
 
     if (valid) {
-      // Si el formulario es válido
       $("#" + currentStep).hide();
       $("#paso" + nextStep).show();
-    } //else { // Si el formulario no es válido
-    //alert("Por favor complete todos los campos requeridos.");
+    }
   });
 
   // Manejar el click en el botón "Anterior"
@@ -283,29 +273,22 @@ $(document).ready(function () {
 
   // Manejar el submit del formulario
   $("#formulario").submit(function (event) {
-    event.preventDefault(); // Prevenir la recarga de la página
-    // Obtener los datos del formulario en cada paso
+    event.preventDefault();
     var nombre = $("#nombre").val();
     var apellido = $("#apellido").val();
     var direccion = $("#direccion").val();
     var correo = $("#correo").val();
     var telefono = $("#telefono").val();
     var comentario = $("#comentario").val();
-    // Mostrar la información de confirmación en el último paso
     $("#confirmacion-nombre").text("Nombre: " + nombre);
     $("#confirmacion-apellido").text("Apellido: " + apellido);
     $("#confirmacion-direccion").text("Direccion: " + direccion);
     $("#confirmacion-correo").text("Correo electrónico: " + correo);
     $("#confirmacion-telefono").text("Teléfono: " + telefono);
     $("#confirmacion-telefono").text("Comentario: " + comentario);
-    // Enviar el formulario o realizar otras acciones necesarias
-    // ...
 
     if ($("#paso3").is(":visible")) {
-      // Obtener los datos del formulario
       var doc = new jsPDF();
-
-      // Obtener el contenido del HTML
 
       doc.text(`Formulario de Contacto`, 10, 10);
       doc.text(`Nombre: ${nombre}`, 10, 20);
@@ -316,15 +299,7 @@ $(document).ready(function () {
       doc.text(`Comentario: ${comentario}`, 10, 70);
       doc.save("formulario.pdf");
 
-      //location.reload()
-      //this.reset()
       location.reload();
     }
   });
-
-  /* $("#btn-contacto").submit(function (event) {
-    event.preventDefault();
-    $("#mensaje").text("El formulario ha sido enviado");
-    $("#mensaje").css("color", "red");
-  }); */
 });
